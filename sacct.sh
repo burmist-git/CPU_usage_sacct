@@ -12,7 +12,8 @@ then
     printHelp
 else
     if [ "$1" = "-g" ]; then
-	sacct -X --user=burmistr --starttime=2023-10-01 --endtime=2024-10-01 --format=JobID,AllocCPUs,Elapsed > sacct_output.csv
+	#sacct -X --user=burmistr --starttime=2023-10-01 --endtime=2024-10-01 --format=JobID,AllocCPUs,Elapsed > sacct_output.csv
+	sacct -X --user=burmistr --starttime=2024-10-01 --endtime=2025-02-19 --format=JobID,AllocCPUs,Elapsed > sacct_output.csv
 	grep -v - sacct_output.csv > sacct_output_clean.csv
     elif [ "$1" = "-t" ]; then
 	python sacct.py
